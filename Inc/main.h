@@ -9,6 +9,7 @@
 #include  "Usart3.h"
 #include  "Uart4.h"
 #include  "Uart5.h"
+#include  "Usart6.h"
 #include  "Timer6.h"
 #include  "Blink.h"
 #include  "Inclinometer.h"

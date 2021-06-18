@@ -37,17 +37,21 @@ int main(void)
 	USART3_Config();
 	UART4_Config();
 	UART5_Config();
+	USART6_Config();
 
 	NVIC_EnableIRQ(USART2_IRQn);
 	NVIC_EnableIRQ(USART3_IRQn);
 	NVIC_EnableIRQ(UART4_IRQn);
 	NVIC_EnableIRQ(UART5_IRQn);
+	NVIC_EnableIRQ(USART6_IRQn);
 
 	OnBoard_Leds_Initialize();
 	Init_TIM6();
 
-	UART5_Start_Message(&ver_mes, sizeof(ver_mes));
-	UART5_Start_Message(&init_mes, sizeof(init_mes));
+	//UART5_Start_Message(&ver_mes, sizeof(ver_mes));
+	//UART5_Start_Message(&init_mes, sizeof(init_mes));
+
+	USART6_Start_Message(&init_mes, sizeof(init_mes));
 
 	Start_TIM6();
 
@@ -59,7 +63,6 @@ int main(void)
 		{
 			Inclinometer_Handler();
 		}
-
 
 	}
 }
